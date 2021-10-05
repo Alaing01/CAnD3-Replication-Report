@@ -1,0 +1,350 @@
+------------------------------------------------------------------------------------------
+      name:  <unnamed>
+       log:  /Users/mattstackhouse/Desktop/PhD/CAnD3/CAND3 Data/GSS 2017 - Family, Cycle 3
+> 1/GSS_Tables_withcoding.log
+  log type:  text
+ opened on:  22 Sep 2021, 09:50:50
+
+. do "/var/folders/5y/2tjt5ts97bgdmrrg5z5p8yrr0000gn/T//SD00912.000000"
+
+. 
+. ***Summary Statistics - Table 1
+. svy: proportion pat_death mat_death SRMH sex agegr10 marital ehg3_01b ttlincg2
+(running proportion on estimation sample)
+
+Survey: Proportion estimation
+
+Number of strata =     1                                      Number of obs   =     7,424
+Number of PSUs   = 7,424                                      Population size = 8,261,372
+                                                              Design df       =     7,423
+
+-----------------------------------------------------------------------------------------
+                                        |             Linearized            Logit
+                                        | Proportion   std. err.     [95% conf. interval]
+----------------------------------------+------------------------------------------------
+                              pat_death |
+                                0 - 17  |   .1025778   .0046699      .0937784    .1121007
+                               18 - 34  |   .2609371   .0067189      .2479827    .2743214
+                               35 - 54  |   .4818205   .0075726      .4669965    .4966766
+                          55 and older  |   .1546646   .0053633      .1444404    .1654724
+                                        |
+                              mat_death |
+                                0 - 17  |   .0549819   .0034585      .0485829    .0621688
+                               18 - 34  |   .1481837   .0055256      .1376756    .1593456
+                               35 - 54  |   .4648354   .0075758      .4500202    .4797128
+                          55 and older  |    .331999   .0070087      .3184058    .3458781
+                                        |
+                                   SRMH |
+                             Fair/Poor  |   .0622158   .0035074      .0556848    .0694564
+              Excellent/Very good/Good  |   .9377842   .0035074      .9305436    .9443152
+                                        |
+                                    sex |
+                                  male  |   .4686489   .0075983      .4537864    .4835672
+                                female  |   .5313511   .0075983      .5164328    .5462136
+                                        |
+                                agegr10 |
+                               15 - 24  |   .0001992   .0001846      .0000324    .0012239
+                               25 - 34  |   .0032657   .0009293      .0018687    .0057013
+                               35 - 44  |   .0180661   .0022735      .0141094    .0231065
+                               45 - 54  |   .1155901    .005633      .1049979     .127099
+                               55 - 64  |   .2864597   .0069504      .2730312    .3002759
+                               65 - 74  |   .3302258   .0068396      .3169588    .3437686
+                     75 years and over  |   .2461934   .0064052       .233854    .2589638
+                                        |
+                                marital |
+                    Married/Common-law  |   .6789094   .0065744      .6658877    .6916585
+                    Previously Married  |   .2458942    .005944      .2344292    .2577312
+                  Single/Never Married  |   .0751964   .0034408      .0687232    .0822255
+                                        |
+                               ehg3_01b |
+                          Less than HS  |   .2010663   .0060607      .1894476      .21321
+                  Has HS or equivalent  |   .2533527   .0065053      .2408138    .2663155
+                     Trade certificate  |   .0690119    .003746      .0620208    .0767267
+        College or non-uni certificate  |   .2085056    .006203       .196607    .2209264
+University cert or diploma below bac..  |   .0398631   .0029273      .0345045    .0460142
+                     Bachelor's degree  |   .1478919   .0055463      .1373465    .1590977
+University certificate, diploma or d..  |   .0803085   .0041408      .0725567    .0888091
+                                        |
+                               ttlincg2 |
+                     Less than $25,000  |   .3538774   .0072895      .3397218    .3682937
+                    $25,000 to $49,999  |   .3167677   .0069442      .3033147    .3305344
+                    $50,000 to $74,999  |    .174239   .0057146      .1633193    .1857268
+                    $75,000 to $99,999  |   .0815918   .0044754      .0732376    .0908056
+                  $100,000 to $124,999  |   .0340268   .0026419      .0292114    .0396036
+                      $125,000 or more  |   .0394973   .0029458      .0341106    .0456944
+-----------------------------------------------------------------------------------------
+
+. 
+. 
+. ***Bivariate Table
+. svy: logistic SRMH i.pat_death
+(running logistic on estimation sample)
+
+Survey: Logistic regression
+
+Number of strata =     1                           Number of obs   =     7,424
+Number of PSUs   = 7,424                           Population size = 8,261,372
+                                                   Design df       =     7,423
+                                                   F(3, 7421)      =      0.97
+                                                   Prob > F        =    0.4066
+
+-------------------------------------------------------------------------------
+              |             Linearized
+         SRMH | Odds ratio   std. err.      t    P>|t|     [95% conf. interval]
+--------------+----------------------------------------------------------------
+    pat_death |
+      0 - 17  |          1  (base)
+     18 - 34  |   1.423087   .3050699     1.65   0.100     .9348197    2.166381
+     35 - 54  |   1.195314   .2322928     0.92   0.359       .81665    1.749558
+55 and older  |   1.187878   .2706776     0.76   0.450     .7599415    1.856794
+              |
+        _cons |   12.34021   2.147592    14.44   0.000     8.773279    17.35733
+-------------------------------------------------------------------------------
+Note: _cons estimates baseline odds.
+
+. eststo m1
+
+. svy: logistic SRMH i.mat_death
+(running logistic on estimation sample)
+
+Survey: Logistic regression
+
+Number of strata =     1                           Number of obs   =     7,424
+Number of PSUs   = 7,424                           Population size = 8,261,372
+                                                   Design df       =     7,423
+                                                   F(3, 7421)      =      7.96
+                                                   Prob > F        =    0.0000
+
+-------------------------------------------------------------------------------
+              |             Linearized
+         SRMH | Odds ratio   std. err.      t    P>|t|     [95% conf. interval]
+--------------+----------------------------------------------------------------
+    mat_death |
+      0 - 17  |          1  (base)
+     18 - 34  |   .6223789   .1669429    -1.77   0.077      .367872    1.052963
+     35 - 54  |   .8267876   .2071603    -0.76   0.448     .5059198    1.351158
+55 and older  |   1.443137   .3833892     1.38   0.167     .8573088    2.429282
+              |
+        _cons |   16.27366   3.825848    11.87   0.000     10.26454    25.80065
+-------------------------------------------------------------------------------
+Note: _cons estimates baseline odds.
+
+. eststo m2
+
+. 
+. *Generate Table*
+. esttab m1 m2, eform b(a2) not label nonumber wide modelwidth(12 12) varwidth(15) ///
+> title("Table 2") mtitle("Model 1" "Model 2")
+
+Table 2
+-----------------------------------------------
+                     Model 1         Model 2   
+-----------------------------------------------
+Self-reported~h                                
+0 - 17                     1                   
+18 - 34                 1.42                   
+35 - 54                 1.20                   
+55 and older            1.19                   
+0 - 17                                     1   
+18 - 34                                 0.62   
+35 - 54                                 0.83   
+55 and older                            1.44   
+-----------------------------------------------
+Observations            7424            7424   
+-----------------------------------------------
+Exponentiated coefficients
+* p<0.05, ** p<0.01, *** p<0.001
+
+. 
+. ***Multivariate Table
+. svy: logistic SRMH i.pat_death i.sex i.agegr10 i.marital i.ehg3_01b i.ttlincg2
+(running logistic on estimation sample)
+
+note: 1b.agegr10 != 0 predicts success perfectly;
+      1b.agegr10 omitted and 2 obs not used.
+note: 7.agegr10 omitted because of collinearity.
+
+Survey: Logistic regression
+
+Number of strata =     1                           Number of obs   =     7,422
+Number of PSUs   = 7,422                           Population size = 8,259,726
+                                                   Design df       =     7,421
+                                                   F(22, 7400)     =      6.32
+                                                   Prob > F        =    0.0000
+
+-----------------------------------------------------------------------------------------
+                        |             Linearized
+                   SRMH | Odds ratio   std. err.      t    P>|t|     [95% conf. interval]
+------------------------+----------------------------------------------------------------
+              pat_death |
+                0 - 17  |          1  (base)
+               18 - 34  |   1.274476   .2831439     1.09   0.275     .8245062    1.970016
+               35 - 54  |   1.111375   .2257128     0.52   0.603     .7463781    1.654863
+          55 and older  |   1.001565    .241197     0.01   0.995     .6246823    1.605828
+                        |
+                    sex |
+                  male  |          1  (base)
+                female  |   1.351241   .1733856     2.35   0.019     1.050733    1.737694
+                        |
+                agegr10 |
+               15 - 24  |          1  (empty)
+               25 - 34  |   .9460434   .9777877    -0.05   0.957     .1247395    7.174937
+               35 - 44  |   1.857968   .9720992     1.18   0.236     .6662115    5.181605
+               45 - 54  |   .5726615   .1406675    -2.27   0.023      .353815    .9268718
+               55 - 64  |   .6353316   .1167412    -2.47   0.014     .4431675    .9108209
+               65 - 74  |   1.078438   .1850514     0.44   0.660     .7703922    1.509657
+     75 years and over  |          1  (omitted)
+                        |
+                marital |
+    Married/Common-law  |          1  (base)
+    Previously Married  |   .5212901   .0740206    -4.59   0.000      .394633    .6885976
+  Single/Never Married  |   .4222864   .0754697    -4.82   0.000     .2974803    .5994541
+                        |
+               ehg3_01b |
+          Less than HS  |          1  (base)
+  Has HS or equivalent  |   1.479159   .2445408     2.37   0.018     1.069714    2.045324
+     Trade certificate  |   1.811094    .455618     2.36   0.018     1.106035    2.965604
+College or non-uni c..  |   1.959715   .3791321     3.48   0.001      1.34119     2.86349
+University cert or d..  |   1.862017   .6051377     1.91   0.056     .9847051     3.52096
+     Bachelor's degree  |    1.71549   .4090444     2.26   0.024     1.074962    2.737683
+University certifica..  |   1.844463   .5360665     2.11   0.035     1.043375    3.260617
+                        |
+               ttlincg2 |
+     Less than $25,000  |          1  (base)
+    $25,000 to $49,999  |   2.067081   .3016256     4.98   0.000     1.552856    2.751591
+    $50,000 to $74,999  |   2.302745   .4651114     4.13   0.000     1.549855    3.421375
+    $75,000 to $99,999  |   2.428718   .7796769     2.76   0.006     1.294424    4.556988
+  $100,000 to $124,999  |   2.613034   1.019726     2.46   0.014     1.215942    5.615353
+      $125,000 or more  |   4.949177   2.183394     3.63   0.000     2.084265    11.75203
+                        |
+                  _cons |    7.70358   1.938841     8.11   0.000     4.703561    12.61707
+-----------------------------------------------------------------------------------------
+Note: _cons estimates baseline odds.
+
+. eststo m1
+
+. svy: logistic SRMH i.mat_death i.sex i.agegr10 i.marital i.ehg3_01b i.ttlincg2
+(running logistic on estimation sample)
+
+note: 1b.agegr10 != 0 predicts success perfectly;
+      1b.agegr10 omitted and 2 obs not used.
+note: 7.agegr10 omitted because of collinearity.
+
+Survey: Logistic regression
+
+Number of strata =     1                           Number of obs   =     7,422
+Number of PSUs   = 7,422                           Population size = 8,259,726
+                                                   Design df       =     7,421
+                                                   F(22, 7400)     =      7.43
+                                                   Prob > F        =    0.0000
+
+-----------------------------------------------------------------------------------------
+                        |             Linearized
+                   SRMH | Odds ratio   std. err.      t    P>|t|     [95% conf. interval]
+------------------------+----------------------------------------------------------------
+              mat_death |
+                0 - 17  |          1  (base)
+               18 - 34  |   .6143607   .1682342    -1.78   0.075     .3591662    1.050876
+               35 - 54  |   .8792377   .2237498    -0.51   0.613      .533895    1.447961
+          55 and older  |   1.438347    .399041     1.31   0.190     .8349796    2.477714
+                        |
+                    sex |
+                  male  |          1  (base)
+                female  |   1.361158   .1745927     2.40   0.016     1.058544    1.750282
+                        |
+                agegr10 |
+               15 - 24  |          1  (empty)
+               25 - 34  |   1.225004   1.195654     0.21   0.835     .1807983    8.300045
+               35 - 44  |   2.794444   1.472295     1.95   0.051     .9948415    7.849411
+               45 - 54  |   .7567898   .1860936    -1.13   0.257     .4673388    1.225515
+               55 - 64  |   .7228937   .1324339    -1.77   0.077     .5047881    1.035237
+               65 - 74  |   1.100546   .1896475     0.56   0.578     .7850623    1.542809
+     75 years and over  |          1  (omitted)
+                        |
+                marital |
+    Married/Common-law  |          1  (base)
+    Previously Married  |     .52321   .0740524    -4.58   0.000      .396444    .6905104
+  Single/Never Married  |   .4218194   .0753248    -4.83   0.000     .2972361    .5986205
+                        |
+               ehg3_01b |
+          Less than HS  |          1  (base)
+  Has HS or equivalent  |    1.41689   .2367088     2.09   0.037     1.021196    1.965907
+     Trade certificate  |   1.745994   .4394411     2.21   0.027     1.066039    2.859649
+College or non-uni c..  |   1.884491   .3657346     3.26   0.001     1.288158    2.756886
+University cert or d..  |   1.735433   .5738085     1.67   0.096     .9076499    3.318161
+     Bachelor's degree  |   1.626692   .3876072     2.04   0.041     1.019644    2.595148
+University certifica..  |    1.79115   .5230821     2.00   0.046     1.010436    3.175081
+                        |
+               ttlincg2 |
+     Less than $25,000  |          1  (base)
+    $25,000 to $49,999  |   2.107302   .3087816     5.09   0.000     1.581177    2.808492
+    $50,000 to $74,999  |   2.310332   .4686902     4.13   0.000     1.552263    3.438613
+    $75,000 to $99,999  |   2.502905   .8062216     2.85   0.004     1.331115    4.706232
+  $100,000 to $124,999  |   2.603384   1.017495     2.45   0.014     1.210052    5.601087
+      $125,000 or more  |   4.958494   2.193269     3.62   0.000     2.083436    11.80102
+                        |
+                  _cons |   8.450029   2.496437     7.22   0.000     4.735242    15.07906
+-----------------------------------------------------------------------------------------
+Note: _cons estimates baseline odds.
+
+. eststo m2
+
+. 
+. *Generate Table*
+. esttab m1 m2, eform b(a2) not label nonumber wide modelwidth(12 12) varwidth(15) ///
+> title("Table 2") mtitle("Model 1" "Model 2")
+
+Table 2
+-----------------------------------------------
+                     Model 1         Model 2   
+-----------------------------------------------
+Self-reported~h                                
+0 - 17                     1                   
+18 - 34                 1.27                   
+35 - 54                 1.11                   
+55 and older            1.00                   
+male                       1               1   
+female                  1.35*           1.36*  
+15 - 24                    1               1   
+25 - 34                 0.95            1.23   
+35 - 44                 1.86            2.79   
+45 - 54                 0.57*           0.76   
+55 - 64                 0.64*           0.72   
+65 - 74                 1.08            1.10   
+75 years and ~r            1               1   
+Married/Commo~w            1               1   
+Previously Ma~d         0.52***         0.52***
+Single/Never ~d         0.42***         0.42***
+Less than HS               1               1   
+Has HS or equ~t         1.48*           1.42*  
+Trade certifi~e         1.81*           1.75*  
+College or no~e         1.96***         1.88** 
+University ce~w         1.86            1.74   
+Bachelor's de~e         1.72*           1.63*  
+University ce~          1.84*           1.79*  
+Less than $~000            1               1   
+$25,000 to ~999         2.07***         2.11***
+$50,000 to ~999         2.30***         2.31***
+$75,000 to ~999         2.43**          2.50** 
+$100,000 to~999         2.61*           2.60*  
+$125,000 or m~e         4.95***         4.96***
+0 - 17                                     1   
+18 - 34                                 0.61   
+35 - 54                                 0.88   
+55 and older                            1.44   
+-----------------------------------------------
+Observations            7422            7422   
+-----------------------------------------------
+Exponentiated coefficients
+* p<0.05, ** p<0.01, *** p<0.001
+
+. 
+end of do-file
+
+. log close
+      name:  <unnamed>
+       log:  /Users/mattstackhouse/Desktop/PhD/CAnD3/CAND3 Data/GSS 2017 - Family, Cycle 3
+> 1/GSS_Tables_withcoding.log
+  log type:  text
+ closed on:  22 Sep 2021, 09:51:03
+------------------------------------------------------------------------------------------
